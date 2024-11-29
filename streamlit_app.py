@@ -14,6 +14,6 @@ with st.expander('Data'):
 x_raw = df.drop('cnt', axis=1)
 
 # Definir Y_raw (cnt)
-y_raw = df.drop('cnt', axis=1)
+y_raw = df.cnt
 y_raw
 
