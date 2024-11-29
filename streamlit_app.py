@@ -9,6 +9,9 @@ with st.expander('Data'):
   st.write('**Raw Data**')
   df = pd.read_csv('https://raw.githubusercontent.com/JesusBenigno/jesus-machinelearning/refs/heads/master/data/day.csv')
   df
-
+  
+# Definir X_raw (season, weekday, weathersit, temp, hum, windspeed)
+X = dr.drop('cnt', axis=1)
+X
 
 
