@@ -11,7 +11,7 @@ with st.expander('Data'):
   df
   
 # Definir X_raw (season, weekday, weathersit, temp, hum, windspeed)
-X = dr.drop('cnt', axis=1)
+X = df.drop('cnt', axis=1)
 X
 
 
