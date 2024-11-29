@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 st.title('WebApp para pronosticar demanda de bicicletas')
 
@@ -15,5 +16,8 @@ x_raw = df.drop('cnt', axis=1)
 
 # Definir Y_raw (cnt)
 y_raw = df.cnt
-y_raw
+
+with st.expander('Visualizacion de Data'):
+  st.bar_chart(data=df, x='season', y='cnt', color = 'weekday', horizontal = True)
+  
 
