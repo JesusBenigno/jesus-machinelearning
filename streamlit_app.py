@@ -47,12 +47,20 @@ with st.sidebar:
     weekday = 6
   elif(weekda == 'Sunday'):
     weekday = 0
-  weathersit = st.selectbox('Weather', ('Clear', 'Cloudy', 'Rainy', 'Heavy Rain'))
+  weathers = st.selectbox('Weather', ('Clear', 'Cloudy', 'Rainy', 'Thunder'))
+  if(weathers == 'Clear'):
+    weathersit = 1
+  elif(weathers == 'Cloudy'):
+    weathersit = 2
+  elif(weathers == 'Rainy'):
+    weathersit = 3
+  elif(weathers == 'Thunder'):
+    weathersit = 4
   temp = st.slider('Temp. (Normalizada)', 0.06, 0.86, 0.5)
   hum = st.slider('Hum. (%)', 0.0, 1.0, 0.6)
   windspeed = st.slider('Vel. Viento (Normalizada)', 0.02, 0.5, 0.2)
 
-weekday
+weathersit
 
 
 
