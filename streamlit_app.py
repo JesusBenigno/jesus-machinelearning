@@ -18,6 +18,7 @@ x_raw = df.drop('cnt', axis=1)
 y_raw = df.cnt
 
 with st.expander('Visualizacion de Data'):
-  st.scatter_chart(data=df, x='weekday', y='cnt', color = 'season')
-  
+  #st.scatter_chart(data=df, x='weekday', y='cnt', color = 'season')
+  df.boxplot(by='season', column='cnt', figsize=(12,8))
+  plt.title("Rental Bikes by Season")
 
