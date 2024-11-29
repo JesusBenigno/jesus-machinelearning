@@ -17,7 +17,7 @@ x_raw = df.drop('cnt', axis=1)
 # Definir Y_raw (cnt)
 y_raw = df.cnt
 
-with st.expander('Visualizacion de Data'):
-  st.scatter_chart(data=df, x='season', y='cnt', height = 500)
+with st.expander('**Visualizacion de Data**'):
+  st.scatter_chart(data=df, x='wheatersit', y='cnt', height = 500)
 
 
