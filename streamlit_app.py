@@ -18,6 +18,6 @@ x_raw = df.drop('cnt', axis=1)
 y_raw = df.cnt
 
 with st.expander('Visualizacion de Data'):
-  st.scatter_chart(data=df, x='weekday', y='cnt', color = 'season', width = 600, height = 500)
+  st.scatter_chart(data=df, x='weekday', y='cnt', color = 'season', height = 500)
 
 
