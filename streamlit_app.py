@@ -32,7 +32,21 @@ with st.sidebar:
     season = 3
   elif(seaso == 'Winter'):
     season = 4
-  weekday = st.selectbox('Weekday', ('Monday', 'Tuesday', 'Wednesady', 'Thursday', 'Friday', 'Saturday', 'Sunday'))
+  weekda = st.selectbox('Weekday', ('Monday', 'Tuesday', 'Wednesady', 'Thursday', 'Friday', 'Saturday', 'Sunday'))
+  if(weekda == 'Monday'):
+    weekday = 1
+  elif(weekda == 'Tuesday'):
+    weekday = 2
+  elif(weekda == 'Wednesday'):
+    weekday = 3
+  elif(weekda == 'Thursday'):
+    weekday = 4
+  elif(weekda == 'Friday'):
+    weekday = 5
+  elif(weekda == 'Saturday'):
+    weekday = 6
+  elif(weekda == 'Sunday'):
+    weekday = 0
   weathersit = st.selectbox('Weather', ('Clear', 'Cloudy', 'Rainy', 'Heavy Rain'))
   temp = st.slider('Temp. (Normalizada)', 0.06, 0.86, 0.5)
   hum = st.slider('Hum. (%)', 0.0, 1.0, 0.6)
