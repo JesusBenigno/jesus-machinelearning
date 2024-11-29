@@ -26,11 +26,11 @@ with st.sidebar:
   seaso = st.selectbox('Season', ('Spring','Summer','Fall','Winter'))
   if(seaso == 'Spring'):
     season = 1
-  else if(seaso == 'Summer'):
+  elif(seaso == 'Summer'):
     season = 2
-  else if(seaso == 'Fall'):
+  elif(seaso == 'Fall'):
     season = 3
-  else if(seaso == 'Winter'):
+  elif(seaso == 'Winter'):
     season = 4
   
   weekday = st.selectbox('Weekday', ('Monday', 'Tuesday', 'Wednesady', 'Thursday', 'Friday', 'Saturday', 'Sunday'))
