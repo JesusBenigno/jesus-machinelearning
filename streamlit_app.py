@@ -32,7 +32,7 @@ with st.sidebar:
     season = 3
   elif(seaso == 'Winter'):
     season = 4
-  weekda = st.selectbox('Weekday', ('Monday', 'Tuesday', 'Wednesady', 'Thursday', 'Friday', 'Saturday', 'Sunday'))
+  weekda = st.selectbox('Weekday', ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'))
   if(weekda == 'Monday'):
     weekday = 1
   elif(weekda == 'Tuesday'):
