@@ -23,7 +23,16 @@ with st.expander('**Visualizacion de Data**'):
 # Input features por el usuario para pronosticar
 with st.sidebar:
   st.header('Features de entrada')
-  season = st.selectbox('Season', ('Spring','Summer','Fall','Winter'))
+  seaso = st.selectbox('Season', ('Spring','Summer','Fall','Winter'))
+  if(seaso == 'Spring'):
+    season = 1
+  else if(seaso == 'Summer'):
+    season = 2
+  else if(seaso == 'Fall'):
+    season = 3
+  else if(seaso == 'Winter'):
+    season = 4
+  
   weekday = st.selectbox('Weekday', ('Monday', 'Tuesday', 'Wednesady', 'Thursday', 'Friday', 'Saturday', 'Sunday'))
   weathersit = st.selectbox('Weather', ('Clear', 'Cloudy', 'Rainy', 'Heavy Rain'))
   temp = st.slider('Temp. (Normalizada)', 0.06, 0.86, 0.5)
