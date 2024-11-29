@@ -27,7 +27,7 @@ with st.sidebar:
   weekday = st.selectbox('Weekday', ('Monday', 'Tuesday', 'Wednesady', 'Thursday', 'Friday', 'Saturday', 'Sunday'))
   weathersit = st.selectbox('Weather', ('Clear', 'Cloudy', 'Rainy', 'Heavy Rain'))
   temp = st.slider('Temp. (Normalizada)', 0.06, 0.86, 0.5)
-  hum = st.slider('Hum. (%)', 0, 1, 0.6)
+  hum = st.slider('Hum. (%)', 0.0, 1.0, 0.6)
   windspeed = st.slider('Vel. Viento (Normalizada)', 0.02, 0.5, 0.2)
 
 
