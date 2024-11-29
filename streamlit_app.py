@@ -1,4 +1,4 @@
-nimport streamlit as st
+import streamlit as st
 import pandas as pd
 import numpy as np
 
@@ -38,7 +38,7 @@ with st.sidebar:
   hum = st.slider('Hum. (%)', 0.0, 1.0, 0.6)
   windspeed = st.slider('Vel. Viento (Normalizada)', 0.02, 0.5, 0.2)
 
-st.write(season)
+season
 
 
 
