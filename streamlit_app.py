@@ -18,6 +18,6 @@ x_raw = df.drop('cnt', axis=1)
 y_raw = df.cnt
 
 with st.expander('**Visualizacion de Data**'):
-  st.scatter_chart(data=df, x='wheatersit', y='cnt', height = 500)
+  st.scatter_chart(data=df, x='weathersit', y='cnt', height = 500)
 
 
