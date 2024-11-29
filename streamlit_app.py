@@ -11,7 +11,9 @@ with st.expander('Data'):
   df
   
 # Definir X_raw (season, weekday, weathersit, temp, hum, windspeed)
-X = df.drop('cnt', axis=1)
-X
+x_raw = df.drop('cnt', axis=1)
 
+# Definir Y_raw (cnt)
+y_raw = df.drop('cnt', axis=1)
+y_raw
 
