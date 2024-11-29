@@ -52,7 +52,7 @@ with st.sidebar:
   hum = st.slider('Hum. (%)', 0.0, 1.0, 0.6)
   windspeed = st.slider('Vel. Viento (Normalizada)', 0.02, 0.5, 0.2)
 
-season
+weekday
 
 
 
