@@ -90,7 +90,11 @@ r2 = r2_score(y_test, y_pred)
 r2
 input = 1
 inputs = [[input, hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]
-inputs
+
+if st.button('Predecir cantidad de bicicletas rentadas'):
+  result = regressor.predict(inputs)
+  updated_res = result.flatten().astype(float)
+  st.write(updated_res)
 
 
 
