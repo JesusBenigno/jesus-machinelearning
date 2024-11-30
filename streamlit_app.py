@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import r2_score, mean_squared_error
 
 st.title('WebApp para pronosticar demanda de bicicletas')
@@ -83,9 +84,13 @@ with st.expander('Features de entrada'):
 X_train, X_test, y_train, y_test = train_test_split(x_raw, y_raw, test_size=0.20, random_state=1, shuffle=True)
 
 st.write('**Regresion Lineal Multiple**')
-regressor = LinearRegression()
-regressor.fit(X_train,y_train)
-y_pred = regressor.predict(X_test)
+rf_reg = RandomForestRegressor(n_estimators= 100, random_state=0)
+rf_reg.fit(X_train,y_train)
+y_pred = rf_reg.predict(X_test)
+
+#regressor = LinearRegression()
+#regressor.fit(X_train,y_train)
+#y_pred = regressor.predict(X_test)
 r2 = r2_score(y_pred, y_test)
 r2
 
