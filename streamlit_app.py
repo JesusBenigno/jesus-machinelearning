@@ -19,7 +19,6 @@ with st.expander('Data'):
 x_raw = df.drop('cnt', axis=1)
 # Definir Y_raw (cnt)
 y_raw = df.cnt.values
-y_raw
 
 with st.expander('Visualizacion de Data'):
   st.scatter_chart(data=df, x='season', y='cnt', height = 500)
@@ -81,25 +80,14 @@ with st.expander('Features de entrada'):
   input_bike
 
 # Entrenar modelo y predecir con las features de entrada
-Xs = input_bike[1:]
+X_train, X_test, y_train, y_test = train_test_split(x_raw, y_raw, test_size=0.20, random_state=1, shuffle=True)
 
-sc_X = StandardScaler()
-sc_y = StandardScaler()
-
-X = sc_X.fit_transform(Xs)
-y = sc_y.fit_transform(y_raw)
-
-X
-
-#st.write('**Regresion Lineal Multiple**')
-#regressor = LinearRegression()
-#regressor.fit(X,y_raw)
-#y_pred = regressor.predict(X_test)
-#y_pred1 = regressor.predict(input_df)
-#r2 = r2_score(y_raw, y_pred)
-#r2
-
-
+st.write('**Regresion Lineal Multiple**')
+regressor = LinearRegression()
+regressor.fit(X_train,y_train)
+y_pred = regressor.predict(X_test)
+r2 = r2_score(y_pred, y_test)
+r2
 
 
 
