@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score, mean_squared_error
@@ -80,16 +81,24 @@ with st.expander('Features de entrada'):
   input_bike
 
 # Entrenar modelo y predecir con las features de entrada
-X = input_bike[1:]
-X_train, X_test, y_train, y_test = train_test_split(X, y_raw, test_size=0.2, train_size=0.8, random_state=0, shuffle=True)
+Xs = input_bike[1:]
 
-st.write('**Regresion Lineal Multiple**')
-regressor = LinearRegression()
-regressor.fit(X,y_raw)
-y_pred = regressor.predict(X_test)
-y_pred1 = regressor.predict(input_df)
-r2 = r2_score(y_raw, y_pred)
-r2
+sc_X = StandardScaler()
+sc_y = StandardScaler()
+
+X = sc_X.fit_transform(Xs)
+y = sc_y.fit_transform(y_raw)
+
+X
+y
+
+#st.write('**Regresion Lineal Multiple**')
+#regressor = LinearRegression()
+#regressor.fit(X,y_raw)
+#y_pred = regressor.predict(X_test)
+#y_pred1 = regressor.predict(input_df)
+#r2 = r2_score(y_raw, y_pred)
+#r2
 
 
 
