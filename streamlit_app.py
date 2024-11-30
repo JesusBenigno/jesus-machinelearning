@@ -104,12 +104,13 @@ lin_reg_2.fit(X_poly, y_train)
 X_test_PR = poly_reg.fit_transform(X_test)
 y_predPR = lin_reg_2.predict(X_test_PR)
 st.write('R2 score: ')
-r2_PR = r2_score(y_predPR,y_test)
+r2_PR = r2_score(y_test,y_predPR)
 r2_PR
 st.write('Prediccion de bicicletas en uso [Regression Lineal Polinomial]:')
 resultPR = lin_reg_2.predict(poly_reg.fit_transform([[1,hour,temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
-updated_resPR = resultPR.flatten().astype(float)
-st.success(int(updated_resPR))
+resultPR
+#updated_resPR = resultPR.flatten().astype(float)
+#st.success(int(updated_resPR))
 
 
 
