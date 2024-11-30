@@ -90,10 +90,10 @@ r2 = r2_score(y_test, y_pred)
 r2
 input = 1
 inputs = [[input, hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]
-st.write('Prediccion de bicicletas en uso hecha con Regression Lineal Multiple:')
+st.write('Prediccion de bicicletas en uso [Regression Lineal Multiple]:')
 result = regressor.predict(inputs)
 updated_res = result.flatten().astype(float)
-st.write(updated_res)
+updated_res
 
 
 
