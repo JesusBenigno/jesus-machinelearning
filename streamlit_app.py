@@ -88,8 +88,9 @@ y_pred = regressor.predict(X_test)
 st.write('R2 score: ')
 r2 = r2_score(y_test, y_pred)
 r2
-
-
+input = 1
+inputs = [[input, hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]
+inputs
 
 
 
