@@ -89,7 +89,7 @@ regressor.fit(X_train,y_train)
 y_pred = regressor.predict(X_test)
 y_pred1 = regressor.predict(input_df)
 r2 = r2_score(y_test, y_pred)
-r2
+X
 
 
 
