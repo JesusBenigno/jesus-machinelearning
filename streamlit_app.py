@@ -86,9 +86,10 @@ X_train, X_test, y_train, y_test = train_test_split(X, y_raw, test_size=0.2, tra
 st.write('**Regresion Lineal Multiple**')
 regressor = LinearRegression()
 regressor.fit(X_train,y_train)
-y_pred = regressor.predict(input_df)
-r2_score(y_test, y_pred)
-
+y_pred = regressor.predict(X_test)
+y_pred1 = regressor.predict(input_df)
+r2 = r2_score(y_test, y_pred)
+r2
 
 
 
