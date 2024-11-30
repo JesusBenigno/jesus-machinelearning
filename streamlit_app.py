@@ -27,7 +27,7 @@ with st.expander('Visualizacion de Data'):
 # Input features por el usuario para pronosticar
 with st.sidebar:
   st.header('Features de entrada')
-  hour = st.slider("Hora", 0,23)
+  hour = st.slider("Hora", 0,23,12)
   temp = st.slider('Temp.(°C)', -25, 25, 15)
   seaso = st.selectbox('Season', ('Spring','Summer','Fall','Winter'))
   if(seaso == 'Spring'):
