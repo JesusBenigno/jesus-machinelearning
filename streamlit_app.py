@@ -90,7 +90,6 @@ X = sc_X.fit_transform(Xs)
 y = sc_y.fit_transform(y_raw)
 
 X
-y
 
 #st.write('**Regresion Lineal Multiple**')
 #regressor = LinearRegression()
