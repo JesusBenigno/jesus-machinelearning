@@ -27,6 +27,8 @@ with st.expander('Visualizacion de Data'):
 # Input features por el usuario para pronosticar
 with st.sidebar:
   st.header('Features de entrada')
+  hour = st.slider("Hora", 0,23)
+  temp = st.slider('Temp.(°C)', -25, 25, 15)
   seaso = st.selectbox('Season', ('Spring','Summer','Fall','Winter'))
   if(seaso == 'Spring'):
     season = 1
@@ -60,7 +62,6 @@ with st.sidebar:
     weathersit = 3
   elif(weathers == 'Thunder'):
     weathersit = 4
-  temp = st.slider('Temp. (Normalizada)', 0.06, 0.86, 0.5)
   hum = st.slider('Hum. (%)', 0.0, 1.0, 0.6)
   windspeed = st.slider('Vel. Viento (Normalizada)', 0.02, 0.5, 0.2)
 
