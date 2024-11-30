@@ -86,7 +86,7 @@ regressor = LinearRegression()
 regressor.fit(X_train,y_train)
 y_pred = regressor.predict(X_test)
 st.write('R2 score: ')
-r2 = r2_score(y_test, y_pred)
+r2 = r2_score(y_pred, y_test)
 r2
 
 
