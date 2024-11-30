@@ -17,7 +17,7 @@ x_raw = df.drop('cnt', axis=1)
 y_raw = df.cnt
 
 
-with st.expander('**Visualizacion de Data**'):
+with st.expander('Visualizacion de Data'):
   st.scatter_chart(data=df, x='season', y='cnt', height = 500)
 
 # Input features por el usuario para pronosticar
