@@ -35,48 +35,40 @@ with st.sidebar:
   dew_point = st.slider('Temp. Punto de Rocio(°C)',-36.6,27.2,0.0)
   solar_rad = st.slider('Radiacion solar(MJ/m2)', 0.0, 3.52, 1.5)
   rain = st.slider('Lluvia(mm)',0,35,15)
-  snow = st.slider('')
+  snow = st.slider('Nieve(cm)',0,10,5)
   seaso = st.selectbox('Season', ('Spring','Summer','Fall','Winter'))
   if(seaso == 'Spring'):
     season = 1
   elif(seaso == 'Summer'):
     season = 2
-  elif(seaso == 'Fall'):
-    season = 3
   elif(seaso == 'Winter'):
-    season = 4
-  weekda = st.selectbox('Weekday', ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'))
-  if(weekda == 'Monday'):
-    weekday = 1
-  elif(weekda == 'Tuesday'):
-    weekday = 2
-  elif(weekda == 'Wednesday'):
-    weekday = 3
-  elif(weekda == 'Thursday'):
-    weekday = 4
-  elif(weekda == 'Friday'):
-    weekday = 5
-  elif(weekda == 'Saturday'):
-    weekday = 6
-  elif(weekda == 'Sunday'):
-    weekday = 0
-  weathers = st.selectbox('Weather', ('Clear', 'Cloudy', 'Rainy', 'Thunder'))
-  if(weathers == 'Clear'):
-    weathersit = 1
-  elif(weathers == 'Cloudy'):
-    weathersit = 2
-  elif(weathers == 'Rainy'):
-    weathersit = 3
-  elif(weathers == 'Thunder'):
-    weathersit = 4
-
+    season = 3
+  elif(seaso == 'Fall'):
+    season = 0
+  holid = st.selectbox('Dia Feriado?',('Si','No'))
+  if(holid == 'Si'):
+    holiday = 0
+  elif(holid == 'No'):
+    holiday = 1
+  diafu = st.selectbox('Servicio de bici activo?',('Si','No'))
+  if(diafu == 'Si'):
+    diafun = 1
+  elif(diafu == 'No'):
+    diafun= 0
+    
 # Creamos un dataframe para las features de entrada (del slider bar)
-data = {'season': season,
-        'weekday': weekday,
-        'weathersit': weathersit,
-        'temp': temp,
-        'hum': hum,
-        'windspeed': windspeed}
+data = {'Hour': hour,
+        'Temperature(°C)': temp,
+        'Humidity(%)': hum,
+        'Wind speed (m/s)': windspeed,
+        'Visibility (10m)': visibility,
+        'Dew point temperature(°C)': dew_point,
+        'Solar Radiation (MJ/m2)': solar_rad,
+        'Rainfall(mm)': rain,
+       'Snowfall (cm)': snow,
+       'Seasons': season,
+       'Holiday': holiday,
+       'Functioning Day': diafun}
 input_df = pd.DataFrame(data, index=[0])
 input_bike = pd.concat([input_df, x_raw], axis=0)
 
