@@ -82,14 +82,11 @@ with st.expander('Features de entrada'):
 X_train, X_test, y_train, y_test = train_test_split(x_raw, y_raw, test_size=0.20, random_state=1, shuffle=True)
 
 st.write('**Regresion Lineal Multiple**')
-rf_reg = RandomForestRegressor(n_estimators= 100, random_state=0)
-rf_reg.fit(X_train,y_train)
-y_pred = rf_reg.predict(X_test)
-
-#regressor = LinearRegression()
-#regressor.fit(X_train,y_train)
-#y_pred = regressor.predict(X_test)
-r2 = r2_score(y_pred, y_test)
+regressor = LinearRegression()
+regressor.fit(X_train,y_train)
+y_pred = regressor.predict(X_test)
+st.write('R2 score: ')
+r2 = r2_score(y_test, y_pred)
 r2
 
 
