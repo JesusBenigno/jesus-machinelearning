@@ -18,7 +18,7 @@ with st.expander('Data'):
 # Definir X_raw (season, weekday, weathersit, temp, hum, windspeed)
 x_raw = df.drop('cnt', axis=1)
 # Definir Y_raw (cnt)
-y_raw = df.cnt
+y_raw = df.cnt.values
 y_raw
 
 with st.expander('Visualizacion de Data'):
