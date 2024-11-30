@@ -17,12 +17,12 @@ with st.expander('Data'):
   df
   
 # Definir X_raw (season, weekday, weathersit, temp, hum, windspeed)
-x_raw = df.drop('cnt', axis=1)
+x_raw = df.drop(['Rented Bike Count'], axis=1)
 # Definir Y_raw (cnt)
-y_raw = df.cnt.values
+y_raw = df['Rented Bike Count'].values
 
 with st.expander('Visualizacion de Data'):
-  st.scatter_chart(data=df, x='season', y='cnt', height = 500)
+  st.scatter_chart(data=df, x='Temperature(°C)', y='Rented Bike Count', height = 500)
 
 # Input features por el usuario para pronosticar
 with st.sidebar:
