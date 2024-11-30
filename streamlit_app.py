@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, PolynomialFeatures
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
@@ -95,7 +95,21 @@ result = regressor.predict(inputs)
 updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 
-
+st.subheader('Regresion Lineal Polinomial')
+poly_reg = PolynomialFeatures(degree=3)
+X_poly = poly_reg.fit_transform(X_train)
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly, y_train)
+# Prediccion de todos los datos para onbtener R2
+X_test_PR = poly_reg.fit_transform(X_test)
+y_predPR = lin_reg_2.predict(X_test_PR)
+st.write('R2 score: ')
+r2_PR = r2_score(y_test, y_predPR)
+r2_PR
+st.write('Prediccion de bicicletas en uso [Regression Lineal Polinomial]:')
+resultPR = lin_reg_2.predict(poly_reg.fit_transform(inputs))
+updated_resPR = resultPR.flatten().astype(float)
+st.success(int(updated_resPR))
 
 
 
