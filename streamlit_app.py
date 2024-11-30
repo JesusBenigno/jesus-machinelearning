@@ -29,7 +29,7 @@ with st.sidebar:
   st.header('Features de entrada')
   hour = st.slider("Hora", 0,23,12)
   temp = st.slider('Temp.(°C)', -25, 25, 15)
-  hum = st.slider('Hum. (%)', 0.0, 1.0, 0.5)
+  hum = st.slider('Hum. (%)', 0, 100, 50)
   windspeed = st.slider('Vel. Viento(m/s)', 0.0, 7.4, 3.5)
   visibility = st.slider('Visibilidad',27,2000,1000)
   dew_point = st.slider('Temp. Punto de Rocio(°C)',-36.6,27.2,0.0)
