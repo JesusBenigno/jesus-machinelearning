@@ -29,6 +29,13 @@ with st.sidebar:
   st.header('Features de entrada')
   hour = st.slider("Hora", 0,23,12)
   temp = st.slider('Temp.(°C)', -25, 25, 15)
+  hum = st.slider('Hum. (%)', 0.0, 1.0, 0.5)
+  windspeed = st.slider('Vel. Viento(m/s)', 0.0, 7.4, 3.5)
+  visibility = st.slider('Visibilidad',27,2000,1000)
+  dew_point = st.slider('Temp. Punto de Rocio(°C)',-36.6,27.2,0.0)
+  solar_rad = st.slider('Radiacion solar(MJ/m2)', 0.0, 3.52, 1.5)
+  rain = st.slider('Lluvia(mm)',0,35,15)
+  snow = st.slider('')
   seaso = st.selectbox('Season', ('Spring','Summer','Fall','Winter'))
   if(seaso == 'Spring'):
     season = 1
@@ -62,8 +69,6 @@ with st.sidebar:
     weathersit = 3
   elif(weathers == 'Thunder'):
     weathersit = 4
-  hum = st.slider('Hum. (%)', 0.0, 1.0, 0.6)
-  windspeed = st.slider('Vel. Viento (Normalizada)', 0.02, 0.5, 0.2)
 
 # Creamos un dataframe para las features de entrada (del slider bar)
 data = {'season': season,
