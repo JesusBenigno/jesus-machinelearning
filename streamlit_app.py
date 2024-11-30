@@ -22,7 +22,7 @@ x_raw = df.drop(['Rented Bike Count'], axis=1)
 y_raw = df['Rented Bike Count'].values
 
 with st.expander('Visualizacion de Data'):
-  st.scatter_chart(data=df, x='Temperature(°C)', y='Rented Bike Count', height = 500)
+  st.scatter_chart(data=df, x='Temperature(°C)', y='Rented Bike Count', height = 500, color='green')
 
 # Input features por el usuario para pronosticar
 with st.sidebar:
