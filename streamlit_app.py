@@ -81,7 +81,7 @@ with st.expander('Features de entrada'):
 # Entrenar modelo y predecir con las features de entrada
 X_train, X_test, y_train, y_test = train_test_split(x_raw, y_raw, test_size=0.20, random_state=1, shuffle=True)
 
-st.write('**Regresion Lineal Multiple**')
+st.subheader('Regresion Lineal Multiple')
 regressor = LinearRegression()
 regressor.fit(X_train,y_train)
 y_pred = regressor.predict(X_test)
