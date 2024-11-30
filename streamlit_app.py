@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score, mean_squared_error
 
 st.title('WebApp para pronosticar demanda de bicicletas')
 
@@ -82,8 +83,11 @@ with st.expander('Features de entrada'):
 X = input_bike[1:]
 X_train, X_test, y_train, y_test = train_test_split(X, y_raw, test_size=0.2, train_size=0.8, random_state=0, shuffle=True)
 
-X_train
-
+st.write('**Regresion Lineal Multiple**')
+regressor = LinearRegression()
+regressor.fit(X_train,y_train)
+y_pred = regressor.predict(input_df)
+r2_score(y_test, y_pred)
 
 
 
