@@ -60,7 +60,17 @@ with st.sidebar:
   hum = st.slider('Hum. (%)', 0.0, 1.0, 0.6)
   windspeed = st.slider('Vel. Viento (Normalizada)', 0.02, 0.5, 0.2)
 
+# Creamos un dataframe para las features de entrada (del slider bar)
+data = {'season': season,
+        'weekday': weekday,
+        'weathersit': weathersit,
+        'temp': temp,
+        'hum': hum,
+        'windspeed': windspeed}
+input_df = pd.DataFrame(data, index=[0])
+input_bike = pd.concat([input_df, x_raw], axis=0)
 
+input_bike
 
 
 
