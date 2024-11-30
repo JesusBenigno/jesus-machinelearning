@@ -70,7 +70,20 @@ data = {'season': season,
 input_df = pd.DataFrame(data, index=[0])
 input_bike = pd.concat([input_df, x_raw], axis=0)
 
-input_bike
+with st.expander('Features de entrada'):
+  st.write('**Nuevos parametros ingresados**')
+  input_df
+  st.write('**Datos conbinados**')
+  input_bike
+
+
+
+
+
+
+
+
+
 
 
 
