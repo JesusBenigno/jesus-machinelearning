@@ -112,7 +112,7 @@ plt.ylabel('Bicis Rentadas')
 st.pyplot(fig)
 
 st.subheader('Regresion Lineal Polinomial')
-poly_reg = PolynomialFeatures(degree=2)
+poly_reg = PolynomialFeatures(degree=3)
 X_poly = poly_reg.fit_transform(X_train)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(X_poly, y_train)
