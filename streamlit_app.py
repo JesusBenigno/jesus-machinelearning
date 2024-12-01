@@ -13,11 +13,11 @@ st.info('Esta aplicacion entrena un modelo de ML de renta de bicicletas y permit
 
 with st.expander('Data'):
   st.write('**Raw Data**')
-  df = pd.read_csv('https://raw.githubusercontent.com/JesusBenigno/jesus-machinelearning/refs/heads/master/data/new_data.csv')
+  df = pd.read_csv('https://raw.githubusercontent.com/JesusBenigno/jesus-machinelearning/refs/heads/master/data/new_data.csv', index=False)
   df
   
 # Definir X_raw (season, weekday, weathersit, temp, hum, windspeed)
-x_raw = df.drop(['','Rented Bike Count'], axis=1)
+x_raw = df.drop(['Rented Bike Count'], axis=1)
 x_raw
 # Definir Y_raw (cnt)
 y_raw = df['Rented Bike Count'].values
