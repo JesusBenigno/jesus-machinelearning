@@ -127,7 +127,7 @@ resPR = lin_reg_2.predict(poly_reg.fit_transform(inputs))
 st.success(int(resPR))
 
 #Mostrar grafica
-np.delete(arr_predicts,0,0)
+np.delete(arr_predicts,0,1)
 arr_predicts
 #for j in temps:
 #  inputs_for[0][1] = j
