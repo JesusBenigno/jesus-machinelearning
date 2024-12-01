@@ -79,13 +79,6 @@ with st.expander('Features de entrada'):
   st.write('**Datos conbinados**')
   input_bike
 
-#Escalar las caracteristicas antes que nada
-sc_X = StandardScaler()
-sc_y = StandardScaler()
-
-x_raw = sc_X.fit_transform(x_raw)
-y_raw = sc_y.fit_transform(y_raw)
-
 # Entrenar modelo y predecir con las features de entrada
 X_train, X_test, y_train, y_test = train_test_split(x_raw, y_raw, test_size=0.20, random_state=1, shuffle=True)
 
@@ -118,7 +111,7 @@ plt.ylabel('Bicis Rentadas')
 st.pyplot(fig)
 
 st.subheader('Regresion Lineal Polinomial')
-poly_reg = PolynomialFeatures(degree=3)
+poly_reg = PolynomialFeatures(degree=2)
 X_poly = poly_reg.fit_transform(X_train)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(X_poly, y_train)
