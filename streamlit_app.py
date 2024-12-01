@@ -158,7 +158,7 @@ st.success(int(resSVR))
 #Mostrar grafica
 arr_predicts2 = []
 for j in temps:
-  res_for = svr_reg.predict(sc.transform([[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
+  res_for = svr_reg.predict(sc.transform([[hour, j, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
   arr_predicts2.append(res_for)
 fig2,ax2 = plt.subplots()
 ax2.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
