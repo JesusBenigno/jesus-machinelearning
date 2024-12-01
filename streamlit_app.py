@@ -155,7 +155,18 @@ st.write('Prediccion de bicicletas en uso [Support Vector Regression]:')
 resSVR = svr_reg.predict(sc.transform([[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
 st.success(int(resSVR))
 
-
+#Mostrar grafica
+arr_predicts2 = []
+for j in temps:
+  res_for = svr_reg.predict(sc.transform([[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
+  arr_predicts2.append(res_for)
+fig2,ax2 = plt.subplots()
+ax2.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
+ax2.plot(temps, arr_predicts2, color = 'blue')
+plt.title('Verdad o mentira (Regresion SVR Temp. vs Bicis Rentadas)')
+plt.xlabel('Temp.(°C)')
+plt.ylabel('Bicis Rentadas')
+st.pyplot(fig2)
 
 
 
