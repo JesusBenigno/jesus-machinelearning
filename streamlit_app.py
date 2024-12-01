@@ -102,13 +102,14 @@ for i in [-20,-15,-10,-5,0,5,10,15,20]:
   inputs_for[0][1] = i
   res_for = regressor.predict(inputs_for)
   arr_predicts.append(res_for)
-arr_predicts
-#fig,ax = plt.subplots()
-#ax.plot([[-20,-15,-10,-5,0,5,10,15,20]], regressor.predict([[-20,-15,-10,-5,0,5,10,15,20]]))
-#plt.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
-#plt.xlabel('Temp.(°C)')
-#plt.ylabel('Bicis Rentadas')
-#st.pyplot(fig)
+
+fig,ax = plt.subplots()
+ax.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
+ax.plot([[-20,-15,-10,-5,0,5,10,15,20]], arr_predicts, color = 'blue')
+plt.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
+plt.xlabel('Temp.(°C)')
+plt.ylabel('Bicis Rentadas')
+st.pyplot(fig)
 
 st.subheader('Regresion Lineal Polinomial')
 poly_reg = PolynomialFeatures(degree=3)
