@@ -99,8 +99,8 @@ inputs_for = inputs
 arr_predicts = []
 
 for i in [-20,-15,-10,-5,0,5,10,15,20]:
-  inputs_for = i
-  res_for = regressor.predict(inputs)
+  inputs_for[0][1] = i
+  res_for = regressor.predict(inputs_for)
   arr_predicts.append(res_for)
 arr_predicts
 #fig,ax = plt.subplots()
