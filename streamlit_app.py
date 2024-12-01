@@ -27,15 +27,15 @@ with st.expander('Visualizacion de Data'):
 # Input features por el usuario para pronosticar
 with st.sidebar:
   st.header('Features de entrada')
-  hour = st.slider("Hora", 0,23,12)
-  temp = st.slider('Temp.(°C)', -25, 25, 15)
-  hum = st.slider('Humedad (%)', 0.0, 100.0, 50.0)
-  windspeed = st.slider('Vel. Viento(m/s)', 0.0, 7.4, 3.5)
-  visibility = st.slider('Visibilidad',27,2000,1000)
-  dew_point = st.slider('Temp. Punto de Rocio(°C)',-36.6,27.2,0.0)
-  solar_rad = st.slider('Radiacion solar(MJ/m2)', 0.0, 3.52, 1.5)
-  rain = st.slider('Lluvia(mm)',0,35,15)
-  snow = st.slider('Nieve(cm)',0,10,5)
+  hour = st.slider("Hora", 0,23,8)
+  temp = st.slider('Temp.(°C)', -25.0, 25.0, 18.2)
+  hum = st.slider('Humedad (%)', 0.0, 100.0, 63.0)
+  windspeed = st.slider('Vel. Viento(m/s)', 0.0, 7.4, 0.8)
+  visibility = st.slider('Visibilidad',27,2000,1731)
+  dew_point = st.slider('Temp. Punto de Rocio(°C)',-36.6,27.2,11.0)
+  solar_rad = st.slider('Radiacion solar(MJ/m2)', 0.00, 3.52, 1.00)
+  rain = st.slider('Lluvia(mm)',0.0,35.0,0.0)
+  snow = st.slider('Nieve(cm)',0.0,10.0,0.0)
   seaso = st.selectbox('Season', ('Spring','Summer','Fall','Winter'))
   if(seaso == 'Spring'):
     season = 1
