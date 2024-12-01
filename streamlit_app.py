@@ -152,9 +152,7 @@ r2_scoreSVR = r2_score(y_test,y_predSVR)
 r2_scoreSVR
 
 st.write('Prediccion de bicicletas en uso [Support Vector Regression]:')
-#resSVR = svr_reg.predict(sc.transform([[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
-resSVR = svr_reg.predict(sc.transform([[8, -20, 63, 0.8, 1731, 11.0,1.00,0.0,0.0,1,0,1]]))
-
+resSVR = svr_reg.predict(sc.transform([[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
 st.success(int(resSVR))
 
 
