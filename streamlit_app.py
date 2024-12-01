@@ -29,7 +29,7 @@ with st.expander('Visualizacion de Data'):
 with st.sidebar:
   st.header('Features de entrada')
   hour = st.slider("Hora", 0,23,8)
-  temp = st.slider('Temp.(°C)', -25.0, 25.0, 18.2)
+  temp = st.slider('Temp.(°C)', -25.0, 40.0, 18.2)
   hum = st.slider('Humedad (%)', 0.0, 100.0, 63.0)
   windspeed = st.slider('Vel. Viento(m/s)', 0.0, 7.4, 0.8)
   visibility = st.slider('Visibilidad',27,2000,1731)
@@ -97,7 +97,7 @@ st.success(int(updated_res))
 #Mostrar grafica
 inputs_for = inputs
 arr_predicts = []
-temps = np.array([-20,-15,-10,-5,0,5,10,15,20])
+temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
 for i in temps:
   inputs_for[0][1] = i
   res_for = regressor.predict(inputs_for)
