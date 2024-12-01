@@ -96,7 +96,7 @@ updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
 fig,ax = plt.subplots()
-ax.plot(x=[[-20,-15,-10,-5,0,5,10,15,20]], y=regressor.predict(x))
+ax.plot([[-20,-15,-10,-5,0,5,10,15,20]], regressor.predict([[-20,-15,-10,-5,0,5,10,15,20]]))
 plt.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
 plt.xlabel('Temp.(°C)')
 plt.ylabel('Bicis Rentadas')
