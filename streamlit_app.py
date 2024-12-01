@@ -92,7 +92,7 @@ r2
 inputs = [[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]
 inputs = np.array(inputs)
 st.write('Prediccion de bicicletas en uso [Regression Lineal Multiple]:')
-result = regressor.predict(inputs)
+result = regressor.predict([[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
 updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
