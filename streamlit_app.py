@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import r2_score, mean_squared_error
+from sklearn.svm import SVR
 
 st.title('WebApp para pronosticar demanda de B')
 
@@ -139,7 +140,20 @@ plt.xlabel('Temp.(°C)')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig1)
 
+st.subheader('Support Vector Regression')
+sc = StandardScaler()
+X_train_escaled = sc.fit_transform(X_train)
+X_test_escaled = sc.fit_transform(X_test)
+svr_reg = SVR(kernel='linear')
+svr_reg.fit(X_train_escaled,y_train)
+y_predSVR = svr_reg.predict(X_test_escaled)
+st.write('R2 score: ')
+r2_scoreSVR = r2_score(y_test,y_predSVR)
+r2_scoreSVR
 
+st.write('Prediccion de bicicletas en uso [Support Vector Regression]:')
+resSVR = svr_reg.predict(sc.transform([[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
+st.success(int(resSVR))
 
 
 
