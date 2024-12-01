@@ -97,7 +97,8 @@ st.success(int(updated_res))
 #Mostrar grafica
 xLR = x_raw['Temperature(°C)'].values
 xLR
-fig = plt.figure(xLR, regressor.predict(y_pred), color = 'blue')
+y_pred
+#fig = plt.figure(xLR, regressor.predict(y_pred), color = 'blue')
 #fig.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
 #fig.xlabel('Temp.(°C)')
 #fig.ylabel('Bicis Rentadas')
