@@ -127,13 +127,13 @@ resPR = lin_reg_2.predict(poly_reg.fit_transform(inputs))
 st.success(int(resPR))
 
 #Mostrar grafica
-for i in range(13):
-  for j in temps:
-    inputs_for[0][1] = j
-    res_for = lin_reg_2.predict(poly_reg.fit_transform(inputs_for))
-    arr_predicts[i] = res_for
+arr_predicts1 = []
+for j in temps:
+  inputs_for[0][1] = j
+  res_for = lin_reg_2.predict(poly_reg.fit_transform(inputs_for))
+  arr_predicts1.append(res_for)
 
-arr_predicts
+arr_predicts1
 
 fig1,ax1 = plt.subplots()
 ax.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
