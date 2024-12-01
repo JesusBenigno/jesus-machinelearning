@@ -95,7 +95,7 @@ result = regressor.predict(inputs)
 updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
-inputs_for = [[inputs]]
+inputs_for = inputs
 arr_predicts = []
 inputs_for
 #for i in [-20,-15,-10,-5,0,5,10,15,20]:
