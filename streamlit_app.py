@@ -13,7 +13,7 @@ st.info('Esta aplicacion entrena un modelo de ML de renta de bicicletas y permit
 
 with st.expander('Data'):
   st.write('**Raw Data**')
-  df = pd.read_csv('https://raw.githubusercontent.com/JesusBenigno/jesus-machinelearning/refs/heads/master/data/new_data.csv', index=False)
+  df = pd.read_csv('new_data.csv', index=False)
   df
   
 # Definir X_raw (season, weekday, weathersit, temp, hum, windspeed)
