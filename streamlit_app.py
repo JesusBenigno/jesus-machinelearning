@@ -17,7 +17,7 @@ with st.expander('Data'):
   
 # Definir X_raw (season, weekday, weathersit, temp, hum, windspeed)
 x_raw = df.drop(['Rented Bike Count'], axis=1)
-x_raw = df.drop(columns=df.columns[0], axis=1, inplace=True)
+x_raw = df.drop(columns=df.columns[0], axis=1)
 x_raw
 # Definir Y_raw (cnt)
 y_raw = df['Rented Bike Count'].values
