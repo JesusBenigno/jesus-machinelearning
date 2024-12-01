@@ -8,7 +8,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import r2_score, mean_squared_error
 
-st.title('WebApp para pronosticar demanda de Bicis')
+st.title('WebApp para pronosticar demanda de Bicis hola')
 
 st.info('Esta aplicacion entrena un modelo de ML de renta de bicicletas y permite hacer pronosticos!')
 
