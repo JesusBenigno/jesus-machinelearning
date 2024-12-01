@@ -8,7 +8,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import r2_score, mean_squared_error
 
-st.title('WebApp para pronosticar demanda de ')
+st.title('WebApp para pronosticar demanda de Bicis')
 
 st.info('Esta aplicacion entrena un modelo de ML de renta de bicicletas y permite hacer pronosticos!')
 
@@ -95,13 +95,11 @@ result = regressor.predict(inputs)
 updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
-xLR = x_raw['Temperature(°C)'].values
-xLR
-y_pred
-fig = plt.figure(xLR, y_pred, color = 'blue')
-fig.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
-fig.xlabel('Temp.(°C)')
-fig.ylabel('Bicis Rentadas')
+fig,ax = plt.subplots()
+ax.plot(x_raw['Temperature(°C)'], y_pred)
+plt.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
+plt.xlabel('Temp.(°C)')
+plt.ylabel('Bicis Rentadas')
 st.pyplot(fig)
 
 st.subheader('Regresion Lineal Polinomial')
