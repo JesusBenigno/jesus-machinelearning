@@ -112,7 +112,7 @@ plt.ylabel('Bicis Rentadas')
 st.pyplot(fig)
 
 st.subheader('Regresion Lineal Polinomial')
-poly_reg = PolynomialFeatures(degree=3)
+poly_reg = PolynomialFeatures(degree=2)
 X_poly = poly_reg.fit_transform(X_train)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(X_poly, y_train)
@@ -126,20 +126,6 @@ st.write('Prediccion de bicicletas en uso [Regression Lineal Polinomial]:')
 resPR = lin_reg_2.predict(poly_reg.fit_transform(inputs))
 st.success(int(resPR))
 
-#Mostrar grafica
-arr_predicts1 = []
-for j in temps:
-  inputs_for[0][1] = j
-  res_for = lin_reg_2.predict(poly_reg.fit_transform(inputs_for))
-  arr_predicts1.append(res_for)
-  
-fig1,ax1 = plt.subplots()
-ax1.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
-ax1.plot(temps, arr_predicts1, color = 'blue')
-plt.title('Verdad o mentira (Regresion Lineal Polinomial Temp. vs Bicis Rentadas)')
-plt.xlabel('Temp.(°C)')
-plt.ylabel('Bicis Rentadas')
-st.pyplot(fig1)
 
 
 
