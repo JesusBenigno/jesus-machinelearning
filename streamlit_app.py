@@ -97,6 +97,7 @@ st.success(int(updated_res))
 #Mostrar grafica
 inputs_for = inputs
 arr_predicts = []
+inputs
 inputs_for[0][0]
 #for i in [-20,-15,-10,-5,0,5,10,15,20]:
 #  inputs_for[1]
