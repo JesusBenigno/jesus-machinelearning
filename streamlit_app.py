@@ -92,8 +92,8 @@ input = 1
 inputs = [[input, hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]
 st.write('Prediccion de bicicletas en uso [Regression Lineal Multiple]:')
 result = regressor.predict(inputs)
-updated_res = result.flatten().astype(float)
-st.success(int(updated_res))
+#updated_res = result.flatten().astype(float)
+#st.success(int(updated_res))
 
 st.subheader('Regresion Lineal Polinomial')
 #poly_reg = PolynomialFeatures(degree=3)
