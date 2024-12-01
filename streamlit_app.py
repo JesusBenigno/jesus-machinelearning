@@ -18,7 +18,6 @@ with st.expander('Data'):
   
 # Definir X_raw (season, weekday, weathersit, temp, hum, windspeed)
 x_raw = df.drop(['Unnamed: 0','Rented Bike Count'], axis=1)
-x_raw
 # Definir Y_raw (cnt)
 y_raw = df['Rented Bike Count'].values
 
@@ -89,8 +88,7 @@ y_pred = regressor.predict(X_test)
 st.write('R2 score: ')
 r2 = r2_score(y_test, y_pred)
 r2
-input = 1
-inputs = [[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun, input]]
+inputs = [[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]
 st.write('Prediccion de bicicletas en uso [Regression Lineal Multiple]:')
 result = regressor.predict(inputs)
 updated_res = result.flatten().astype(float)
@@ -108,7 +106,7 @@ st.write('R2 score: ')
 r2_PR = r2_score(y_test,y_predPR)
 r2_PR
 st.write('Prediccion de bicicletas en uso [Regression Lineal Polinomial]:')
-st.success(int(lin_reg_2.predict(poly_reg.fit_transform([[hour,temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun, input]]))))
+st.success(int(lin_reg_2.predict(poly_reg.fit_transform([[hour,temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))))
 
 
 
