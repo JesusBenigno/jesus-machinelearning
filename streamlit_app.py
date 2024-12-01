@@ -104,6 +104,7 @@ for i in temps:
   arr_predicts.append(res_for)
   inputs_for
 
+arr_predicts
 fig,ax = plt.subplots()
 ax.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
 ax.plot(temps, arr_predicts, color = 'blue')
@@ -132,17 +133,17 @@ arr_predicts1 = []
 for j in temps:
   inputs_for[0][1] = j
   inputs_for
-  #res_for = lin_reg_2.predict(poly_reg.fit_transform(inputs_for))
-  #arr_predicts1.append(res_for)
+  res_for = lin_reg_2.predict(poly_reg.fit_transform(inputs_for))
+  arr_predicts1.append(res_for)
   
-
-#fig1,ax1 = plt.subplots()
-#ax.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
-#ax.plot(temps, arr_predicts1, color = 'blue')
-#plt.title('Verdad o mentira (Regresion Lineal Polinomial Temp. vs Bicis Rentadas)')
-#plt.xlabel('Temp.(°C)')
-#plt.ylabel('Bicis Rentadas')
-#st.pyplot(fig1)
+arr_predicts1
+fig1,ax1 = plt.subplots()
+ax.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
+ax.plot(temps, arr_predicts1, color = 'blue')
+plt.title('Verdad o mentira (Regresion Lineal Polinomial Temp. vs Bicis Rentadas)')
+plt.xlabel('Temp.(°C)')
+plt.ylabel('Bicis Rentadas')
+st.pyplot(fig1)
 
 
 
