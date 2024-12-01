@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler, PolynomialFeatures
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -93,6 +94,14 @@ st.write('Prediccion de bicicletas en uso [Regression Lineal Multiple]:')
 result = regressor.predict(inputs)
 updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
+#Mostrar grafica
+xLR = x_raw['Temperature(°C)']
+plt.scatter(xLR, y_raw, color = 'red')
+plt.plot(xLR, regressor.predict(xLR), color = 'blue')
+plt.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
+plt.xlabel('Temp.(°C)')
+plt.ylabel('Bicis Rentadas')
+plt.show
 
 st.subheader('Regresion Lineal Polinomial')
 poly_reg = PolynomialFeatures(degree=3)
