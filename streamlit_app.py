@@ -103,6 +103,7 @@ for i in temps:
   res_for = regressor.predict(inputs_for)
   arr_predicts.append(res_for)
 
+arr_predicts
 fig,ax = plt.subplots()
 ax.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
 ax.plot(temps, arr_predicts, color = 'blue')
