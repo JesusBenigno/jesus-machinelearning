@@ -96,10 +96,10 @@ updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
 xLR = x_raw['Temperature(°C)']
-plt.plot(xLR, regressor.predict(xLR), color = 'blue')
-plt.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
-plt.xlabel('Temp.(°C)')
-plt.ylabel('Bicis Rentadas')
+fig = plt.plot(xLR, regressor.predict(xLR), color = 'blue')
+fig.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
+fig.xlabel('Temp.(°C)')
+fig.ylabel('Bicis Rentadas')
 st.write(fig)
 
 st.subheader('Regresion Lineal Polinomial')
