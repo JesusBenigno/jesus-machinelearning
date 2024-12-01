@@ -95,12 +95,17 @@ result = regressor.predict(inputs)
 updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
-fig,ax = plt.subplots()
-ax.plot([[-20,-15,-10,-5,0,5,10,15,20]], regressor.predict([[-20,-15,-10,-5,0,5,10,15,20]]))
-plt.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
-plt.xlabel('Temp.(°C)')
-plt.ylabel('Bicis Rentadas')
-st.pyplot(fig)
+inputs_for = inputs
+arr_predicts = []
+inputs_for[1]
+#for i in [-20,-15,-10,-5,0,5,10,15,20]:
+#  inputs_for[1]
+#fig,ax = plt.subplots()
+#ax.plot([[-20,-15,-10,-5,0,5,10,15,20]], regressor.predict([[-20,-15,-10,-5,0,5,10,15,20]]))
+#plt.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
+#plt.xlabel('Temp.(°C)')
+#plt.ylabel('Bicis Rentadas')
+#st.pyplot(fig)
 
 st.subheader('Regresion Lineal Polinomial')
 poly_reg = PolynomialFeatures(degree=3)
