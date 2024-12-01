@@ -97,11 +97,12 @@ st.success(int(updated_res))
 #Mostrar grafica
 inputs_for = inputs
 arr_predicts = []
-inputs_for[0][1] = -20
-inputs_for
-#for i in [-20,-15,-10,-5,0,5,10,15,20]:
 
-  
+for i in [-20,-15,-10,-5,0,5,10,15,20]:
+  inputs_for = i
+  res_for = regressor.predict(inputs)
+  arr_predicts.append(res_for)
+arr_predicts
 #fig,ax = plt.subplots()
 #ax.plot([[-20,-15,-10,-5,0,5,10,15,20]], regressor.predict([[-20,-15,-10,-5,0,5,10,15,20]]))
 #plt.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
