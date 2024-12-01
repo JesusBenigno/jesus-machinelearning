@@ -108,7 +108,7 @@ r2_PR
 st.write('Prediccion de bicicletas en uso [Regression Lineal Polinomial]:')
 resPR = lin_reg_2.predict(poly_reg.fit_transform(inputs))
 resPR
-#st.success(int())))
+st.success(int(resPR))
 
 
 
