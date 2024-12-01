@@ -138,8 +138,8 @@ for j in temps:
   
 arr_predicts1
 fig1,ax1 = plt.subplots()
-ax.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
-ax.plot(temps, arr_predicts1, color = 'blue')
+ax1.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
+ax1.plot(temps, arr_predicts1, color = 'blue')
 plt.title('Verdad o mentira (Regresion Lineal Polinomial Temp. vs Bicis Rentadas)')
 plt.xlabel('Temp.(°C)')
 plt.ylabel('Bicis Rentadas')
