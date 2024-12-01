@@ -96,11 +96,11 @@ updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
 xLR = x_raw['Temperature(°C)']
-plot = plt.plot(xLR, regressor.predict(xLR), color = 'blue')
+plt.plot(xLR, regressor.predict(xLR), color = 'blue')
 plt.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
 plt.xlabel('Temp.(°C)')
 plt.ylabel('Bicis Rentadas')
-st.pyplot(plot)
+st.pyplot(plt.gcf())
 
 st.subheader('Regresion Lineal Polinomial')
 poly_reg = PolynomialFeatures(degree=3)
