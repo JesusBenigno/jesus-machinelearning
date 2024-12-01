@@ -123,7 +123,7 @@ st.write('R2 score: ')
 r2_PR = r2_score(y_test,y_predPR)
 r2_PR
 st.write('Prediccion de bicicletas en uso [Regression Lineal Polinomial]:')
-resPR = lin_reg_2.predict(poly_reg.fit_transform(inputs))
+resPR = lin_reg_2.predict(poly_reg.fit_transform([[8, 18.2, 63, 0.8, 1731, 11.0,1.00,0.0,0.0,1,0,1]]))
 st.success(int(resPR))
 
 
