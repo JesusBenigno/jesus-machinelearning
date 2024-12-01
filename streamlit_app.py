@@ -95,7 +95,7 @@ updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 
 st.subheader('Regresion Lineal Polinomial')
-poly_reg = PolynomialFeatures(degree=2)
+poly_reg = PolynomialFeatures(degree=3)
 X_poly = poly_reg.fit_transform(X_train)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(X_poly, y_train)
