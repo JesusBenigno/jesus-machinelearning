@@ -127,18 +127,20 @@ resPR = lin_reg_2.predict(poly_reg.fit_transform(inputs))
 st.success(int(resPR))
 
 #Mostrar grafica
-for j in temps:
-  inputs_for[0][1] = j
-  res_for = lin_reg_2.predict(poly_reg.fit_transform(inputs_for))
-  arr_predicts.append(res_for)
-
-fig1,ax1 = plt.subplots()
-ax.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
-ax.plot(temps, arr_predicts, color = 'blue')
-plt.title('Verdad o mentira (Regresion Lineal Polinomial Temp. vs Bicis Rentadas)')
-plt.xlabel('Temp.(°C)')
-plt.ylabel('Bicis Rentadas')
-st.pyplot(fig1)
+np.delete(arr_predicts,0,0)
+arr_predicts
+#for j in temps:
+#  inputs_for[0][1] = j
+#  res_for = lin_reg_2.predict(poly_reg.fit_transform(inputs_for))
+#  arr_predicts.append(res_for)
+#arr_predicts
+#fig1,ax1 = plt.subplots()
+#ax.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
+#ax.plot(temps, arr_predicts, color = 'blue')
+#plt.title('Verdad o mentira (Regresion Lineal Polinomial Temp. vs Bicis Rentadas)')
+#plt.xlabel('Temp.(°C)')
+#plt.ylabel('Bicis Rentadas')
+#st.pyplot(fig1)
 
 
 
