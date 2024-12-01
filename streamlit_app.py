@@ -100,7 +100,7 @@ plt.plot(xLR, regressor.predict(xLR), color = 'blue')
 plt.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
 plt.xlabel('Temp.(°C)')
 plt.ylabel('Bicis Rentadas')
-st.pyplot(plt.gcf())
+st.write(fig)
 
 st.subheader('Regresion Lineal Polinomial')
 poly_reg = PolynomialFeatures(degree=3)
