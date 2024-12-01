@@ -96,7 +96,7 @@ updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
 xLR = x_raw['Temperature(°C)'].values
-xLR
+xLR.reshape(-1, 1)
 fig = plt.figure(xLR, regressor.predict(xLR), color = 'blue')
 #fig.title('Verdad o mentira (Regresion Lineal Multiple Temo. vs Bicis Rentadas)')
 #fig.xlabel('Temp.(°C)')
