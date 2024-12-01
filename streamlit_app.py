@@ -89,7 +89,7 @@ st.write('R2 score: ')
 r2 = r2_score(y_test, y_pred)
 r2
 input = 1
-inputs = [[input, hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]
+inputs = [[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun, input]]
 st.write('Prediccion de bicicletas en uso [Regression Lineal Multiple]:')
 result = regressor.predict(inputs)
 updated_res = result.flatten().astype(float)
@@ -107,7 +107,7 @@ st.write('R2 score: ')
 r2_PR = r2_score(y_test,y_predPR)
 r2_PR
 st.write('Prediccion de bicicletas en uso [Regression Lineal Polinomial]:')
-st.success(int(lin_reg_2.predict(poly_reg.fit_transform([[1,hour,temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))))
+st.success(int(lin_reg_2.predict(poly_reg.fit_transform([[hour,temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun, input]]))))
 
 
 
