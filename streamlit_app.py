@@ -129,8 +129,7 @@ st.success(int(resPR))
 
 #Mostrar grafica
 arr_predicts1 = []
-inputs_for[0][1] = 8
-inputs_for
+temps
 #for j in temps:
 #  inputs_for[0][1] = j
 #  res_for = lin_reg_2.predict(poly_reg.fit_transform(inputs_for))
