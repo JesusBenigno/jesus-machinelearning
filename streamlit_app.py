@@ -102,9 +102,7 @@ for i in temps:
   inputs_for[0][1] = i
   res_for = regressor.predict(inputs_for)
   arr_predicts.append(res_for)
-  inputs_for
 
-arr_predicts
 fig,ax = plt.subplots()
 ax.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
 ax.plot(temps, arr_predicts, color = 'blue')
@@ -132,11 +130,9 @@ st.success(int(resPR))
 arr_predicts1 = []
 for j in temps:
   inputs_for[0][1] = j
-  inputs_for
   res_for = lin_reg_2.predict(poly_reg.fit_transform(inputs_for))
   arr_predicts1.append(res_for)
   
-arr_predicts1
 fig1,ax1 = plt.subplots()
 ax1.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
 ax1.plot(temps, arr_predicts1, color = 'blue')
