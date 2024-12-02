@@ -115,7 +115,7 @@ st.pyplot(fig)
 
 st.subheader('Regresion Lineal Polinomial')
 grado = st.selectbox('Grado del Polinomio', (1,2,3))
-poly_reg = PolynomialFeatures(degree=2)
+poly_reg = PolynomialFeatures(degree=grado)
 X_poly = poly_reg.fit_transform(X_train)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(X_poly, y_train)
