@@ -210,7 +210,7 @@ st.success(int(resDTR))
 #Mostrar grafica
 arr_predicts4 = []
 for j in temps:
-  res_for = RFReg.predict([[hour, j, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
+  res_for = dt_reg.predict([[hour, j, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
   arr_predicts4.append(res_for)
 fig4,ax4 = plt.subplots()
 ax4.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
