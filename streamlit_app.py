@@ -181,3 +181,15 @@ st.write('Prediccion de bicicletas en uso [Random Forest Regression]:')
 resRFR = RFReg.predict([[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
 st.success(int(resRFR))
 
+#Mostrar grafica
+arr_predicts3 = []
+for j in temps:
+  res_for = RFReg.predict([[hour, j, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
+  arr_predicts3.append(res_for)
+fig3,ax3 = plt.subplots()
+ax3.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
+ax3.plot(temps, arr_predicts3, color = 'blue')
+plt.title('Verdad o mentira (Random Forest Temp. vs Bicis Rentadas)')
+plt.xlabel('Temp.(°C)')
+plt.ylabel('Bicis Rentadas')
+st.pyplot(fig3)
