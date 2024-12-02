@@ -6,8 +6,9 @@ from sklearn.preprocessing import StandardScaler, PolynomialFeatures
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import r2_score, mean_squared_error
+from sklearn.metrics import r2_score
 from sklearn.svm import SVR
+from sklearn.ensemble import RandomForestRegressor
 
 st.title('WebApp para pronosticar demanda de B')
 
@@ -168,5 +169,15 @@ plt.xlabel('Temp.(°C)')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig2)
 
+st.subheader('Random Forest Regression')
+RFReg = RandomForestRegressor()
+RFReg.fit(X_train, y_train)
+y_predRFR = RFReg.predict(X_test)
+r2_RFR = r2_score(y_predRFR, y_test)
+st.write('R2 score: ')
+r2_RFR
 
+st.write('Prediccion de bicicletas en uso [Random Forest Regression]:')
+resRFR = RFReg.predict([[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
+st.success(int(resRFR))
 
