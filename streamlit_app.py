@@ -11,9 +11,9 @@ from sklearn.svm import SVR
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.tree import DecisionTreeRegressor
 
-st.title('WebApp para pronosticar demanda de B')
+st.title('🚲 WebApp para pronosticar demanda de Bicis 🚲')
 
-st.info('Esta aplicacion entrena un modelo de ML de renta de bicicletas y permite hacer pronosticos!')
+st.info('Esta aplicacion entrena un modelo de ML de renta de bicicletas y permite hacer pronosticos! 💻')
 
 with st.expander('Data'):
   st.write('**Raw Data**')
