@@ -9,6 +9,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import r2_score
 from sklearn.svm import SVR
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.tree import DecisionTreeRegressor
 
 st.title('WebApp para pronosticar demanda de B')
 
@@ -193,3 +194,15 @@ plt.title('Verdad o mentira (Random Forest Temp. vs Bicis Rentadas)')
 plt.xlabel('Temp.(°C)')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig3)
+
+st.subheader('Decision Tree Regression')
+dt_reg = DecisionTreeRegressor(random_state=4)
+dt_reg.fit(X_train,y_train)
+y_predDTR = dt_reg.predict(X_test)
+r2DTR = r2_score(y_predDTR, y_test)
+st.write('R2 score: ')
+r2DTR
+
+st.write('Prediccion de bicicletas en uso [Random Forest Regression]:')
+resDTR = dt_reg.predict([[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
+st.success(int(resDTR))
