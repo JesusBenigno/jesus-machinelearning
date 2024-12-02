@@ -203,6 +203,19 @@ r2DTR = r2_score(y_predDTR, y_test)
 st.write('R2 score: ')
 r2DTR
 
-st.write('Prediccion de bicicletas en uso [Random Forest Regression]:')
+st.write('Prediccion de bicicletas en uso [Decision Tree Regression]:')
 resDTR = dt_reg.predict([[hour, temp, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
 st.success(int(resDTR))
+
+#Mostrar grafica
+arr_predicts4 = []
+for j in temps:
+  res_for = RFReg.predict([[hour, j, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
+  arr_predicts4.append(res_for)
+fig4,ax4 = plt.subplots()
+ax4.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
+ax4.plot(temps, arr_predicts4, color = 'blue')
+plt.title('Verdad o mentira (Decision Tree Temp. vs Bicis Rentadas)')
+plt.xlabel('Temp.(°C)')
+plt.ylabel('Bicis Rentadas')
+st.pyplot(fig4)
