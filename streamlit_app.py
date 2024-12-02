@@ -170,7 +170,7 @@ plt.ylabel('Bicis Rentadas')
 st.pyplot(fig2)
 
 st.subheader('Random Forest Regression')
-RFReg = RandomForestRegressor()
+RFReg = RandomForestRegressor(n_estimators = 200)
 RFReg.fit(X_train, y_train)
 y_predRFR = RFReg.predict(X_test)
 r2_RFR = r2_score(y_predRFR, y_test)
