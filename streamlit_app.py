@@ -145,7 +145,7 @@ st.pyplot(fig1)
 
 st.subheader('Support Vector Regression')
 kernel_svr = st.selectbox('Selecciona el kernel: (optimo=rbf)', ('rbf','linear','sigmoid'))
-c_svr = st.slider('Selecciona el parametro de regularizacion C (optimo=9.0)', 1.00, 10.00, 5.00)
+c_svr = st.slider('Selecciona el parametro de regularizacion C (optimo=9.0)', 1.00, 10.00, 5.00, step='int')
 sc = StandardScaler()
 X_train_escaled = sc.fit_transform(X_train)
 X_test_escaled = sc.fit_transform(X_test)
