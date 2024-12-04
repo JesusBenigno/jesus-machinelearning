@@ -170,7 +170,7 @@ fig2,ax2 = plt.subplots()
 ax2.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
 ax2.plot(temps, arr_predicts2, color = 'blue')
 plt.title('Verdad o mentira (Regresion SVR Temp. vs Bicis Rentadas)')
-plt.xlabel('Temp.(°C)')
+plt.xlabel('Humidity(%)')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig2)
 
