@@ -133,7 +133,7 @@ st.success(int(resPR))
 #Mostrar grafica
 arr_predicts1 = []
 for j in temps:
-  res_for = lin_reg_2.predict(poly_reg.fit_transform([[hour, temp, hum, windspeed, j, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
+  res_for = (lin_reg_2.predict(poly_reg.fit_transform([[hour, temp, hum, windspeed, j, dew_point, solar_rad, rain, snow, season, holiday, diafun]])))-4900
   arr_predicts1.append(res_for)
   
 fig1,ax1 = plt.subplots()
