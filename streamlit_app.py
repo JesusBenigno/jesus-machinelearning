@@ -137,10 +137,10 @@ for j in temps:
   arr_predicts1.append(res_for)
   
 fig1,ax1 = plt.subplots()
-ax1.scatter(x_raw['Solar Radiation (MJ/m2)'], y_raw, color = 'red')
+ax1.scatter(x_raw['Wind speed (m/s)'], y_raw, color = 'red')
 ax1.plot(temps, arr_predicts1, color = 'blue')
 plt.title('Verdad o mentira (Regresion Lineal Polinomial Temp. vs Bicis Rentadas)')
-plt.xlabel('Solar Rad')
+plt.xlabel('Wind')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig1)
 
