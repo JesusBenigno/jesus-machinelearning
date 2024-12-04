@@ -133,14 +133,14 @@ st.success(int(resPR))
 #Mostrar grafica
 arr_predicts1 = []
 for j in temps:
-  res_for = lin_reg_2.predict(poly_reg.fit_transform([[hour, temp, j, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
+  res_for = lin_reg_2.predict(poly_reg.fit_transform([[hour, temp, hum, windspeed, visibility, dew_point, j, rain, snow, season, holiday, diafun]]))
   arr_predicts1.append(res_for)
   
 fig1,ax1 = plt.subplots()
-ax1.scatter(x_raw['Hour'], y_raw, color = 'green')
+ax1.scatter(x_raw['Solar Radiation (Mj/m2)'], y_raw, color = 'red')
 ax1.plot(temps, arr_predicts1, color = 'blue')
 plt.title('Verdad o mentira (Regresion Lineal Polinomial Temp. vs Bicis Rentadas)')
-plt.xlabel('Hum')
+plt.xlabel('Solar Rad')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig1)
 
