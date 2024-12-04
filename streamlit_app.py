@@ -100,8 +100,8 @@ updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
 arr_predicts = []
-#temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
-temps = np.array([0,100,200,300,400,500,600,700,800,900,1000,1500,1600,1700,2000,2100])
+temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
+#temps = np.array([0,100,200,300,400,500,600,700,800,900,1000,1500,1600,1700,2000,2100])
 for i in temps:
   res_for = regressor.predict([[hour, i, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
   arr_predicts.append(res_for)
@@ -133,14 +133,14 @@ st.success(int(resPR))
 #Mostrar grafica
 arr_predicts1 = []
 for j in temps:
-  res_for = (lin_reg_2.predict(poly_reg.fit_transform([[hour, temp, hum, windspeed, j, dew_point, solar_rad, rain, snow, season, holiday, diafun]])))-4900
+  res_for = lin_reg_2.predict(poly_reg.fit_transform([[hour, j, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
   arr_predicts1.append(res_for)
   
 fig1,ax1 = plt.subplots()
-ax1.scatter(x_raw['Visibility (10m)'], y_raw, color = 'red')
+ax1.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
 ax1.plot(temps, arr_predicts1, color = 'blue')
-plt.title('Verdad o mentira (Regresion Lineal Polinomial Visibilidad. vs Bicis Rentadas)')
-plt.xlabel('Visibilidad')
+plt.title('Verdad o mentira (Regresion Lineal Polinomial Temp. vs Bicis Rentadas)')
+plt.xlabel('Temp.(°C)')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig1)
 
