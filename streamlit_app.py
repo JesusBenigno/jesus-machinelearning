@@ -137,7 +137,7 @@ for j in temps:
   arr_predicts1.append(res_for)
   
 fig1,ax1 = plt.subplots()
-ax1.scatter(x_raw['Humidity(%)'], y_raw, color = 'red')
+ax1.scatter(x_raw['Hour'], y_raw, color = 'green')
 ax1.plot(temps, arr_predicts1, color = 'blue')
 plt.title('Verdad o mentira (Regresion Lineal Polinomial Temp. vs Bicis Rentadas)')
 plt.xlabel('Hum')
