@@ -101,7 +101,7 @@ st.success(int(updated_res))
 #Mostrar grafica
 arr_predicts = []
 #temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
-temps = np.array([0,100,200,300,400,500,600,700,800,900,1000,1500])
+temps = np.array([0,100,200,300,400,500,600,700,800,900,1000,1500,1600,1700,2000,2100])
 for i in temps:
   res_for = regressor.predict([[hour, i, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
   arr_predicts.append(res_for)
