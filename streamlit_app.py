@@ -139,7 +139,7 @@ for j in temps:
 fig1,ax1 = plt.subplots()
 ax1.scatter(x_raw['Visibility (10m)'], y_raw, color = 'red')
 ax1.plot(temps, arr_predicts1, color = 'blue')
-plt.title('Verdad o mentira (Regresion Lineal Polinomial Temp. vs Bicis Rentadas)')
+plt.title('Verdad o mentira (Regresion Lineal Polinomial Visibilidad. vs Bicis Rentadas)')
 plt.xlabel('Visibilidad')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig1)
