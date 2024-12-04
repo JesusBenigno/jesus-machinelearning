@@ -101,7 +101,7 @@ st.success(int(updated_res))
 #Mostrar grafica
 arr_predicts = []
 #temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
-temps = np.array([0,0.5,1,1.5,2,2.5,3,3.5,4])
+temps = np.array([0,100,200,300,400,500,600,700,800,900,1000,1500])
 for i in temps:
   res_for = regressor.predict([[hour, i, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
   arr_predicts.append(res_for)
@@ -137,10 +137,10 @@ for j in temps:
   arr_predicts1.append(res_for)
   
 fig1,ax1 = plt.subplots()
-ax1.scatter(x_raw['Wind speed (m/s)'], y_raw, color = 'red')
+ax1.scatter(x_raw['Visibility (10m)'], y_raw, color = 'red')
 ax1.plot(temps, arr_predicts1, color = 'blue')
 plt.title('Verdad o mentira (Regresion Lineal Polinomial Temp. vs Bicis Rentadas)')
-plt.xlabel('Wind')
+plt.xlabel('Visibilidad')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig1)
 
