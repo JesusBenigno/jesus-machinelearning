@@ -100,8 +100,8 @@ updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
 arr_predicts = []
-#temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
-temps = np.array([0,0.5,1,1.5,2,2.5,3,3.5,4,5,6])
+temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
+#temps = np.array([0,0.5,1,1.5,2,2.5,3,3.5,4,5,6])
 for i in temps:
   res_for = regressor.predict([[hour, i, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
   arr_predicts.append(res_for)
@@ -167,7 +167,7 @@ for j in temps:
   res_for = svr_reg.predict(sc.transform([[hour, j, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
   arr_predicts2.append(res_for)
 fig2,ax2 = plt.subplots()
-ax2.scatter(x_raw['Temperature(°C)'], y_raw, color = 'green')
+ax2.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
 ax2.plot(temps, arr_predicts2, color = 'blue')
 plt.title('Verdad o mentira (Regresion SVR Temp. vs Bicis Rentadas)')
 plt.xlabel('Temp.(°C)')
@@ -218,12 +218,12 @@ st.success(int(resDTR))
 #Mostrar grafica
 arr_predicts4 = []
 for j in temps:
-  res_for = dt_reg.predict([[hour, temp, hum, j, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
+  res_for = dt_reg.predict([[hour, j, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
   arr_predicts4.append(res_for)
 fig4,ax4 = plt.subplots()
-ax4.scatter(x_raw['Wind speed (m/s)'], y_raw, color = 'blue')
-ax4.plot(temps, arr_predicts4, color = 'red')
+ax4.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
+ax4.plot(temps, arr_predicts4, color = 'blue')
 plt.title('Verdad o mentira (Decision Tree Vel. viento vs Bicis Rentadas)')
-plt.xlabel('Vel. viento')
+plt.xlabel('Temp.(°C)')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig4)
