@@ -194,7 +194,7 @@ for j in temps:
   res_for = RFReg.predict([[hour, j, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
   arr_predicts3.append(res_for)
 fig3,ax3 = plt.subplots()
-ax3.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
+ax3.scatter(x_raw['Temperature(°C)'], y_raw, color = 'green')
 ax3.plot(temps, arr_predicts3, color = 'blue')
 plt.title('Verdad o mentira (Random Forest Temp. vs Bicis Rentadas)')
 plt.xlabel('Temp.(°C)')
