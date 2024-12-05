@@ -100,8 +100,8 @@ updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
 arr_predicts = []
-#temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
-temps = np.array([0,0.5,1,1.5,2,2.5,3,3.5])
+temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
+#temps = np.array([0,0.5,1,1.5,2,2.5,3,3.5])
 for i in temps:
   res_for = regressor.predict([[hour, i, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
   arr_predicts.append(res_for)
@@ -191,13 +191,13 @@ st.success(int(resRFR))
 #Mostrar grafica
 arr_predicts3 = []
 for j in temps:
-  res_for = RFReg.predict([[hour, temp, hum, windspeed, visibility, dew_point, j, rain, snow, season, holiday, diafun]])
+  res_for = RFReg.predict([[hour, j, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
   arr_predicts3.append(res_for)
 fig3,ax3 = plt.subplots()
-ax3.scatter(x_raw['Solar Radiation (MJ/m2)'], y_raw, color = 'blue')
-ax3.plot(temps, arr_predicts3, color = 'red')
-plt.title('Verdad o mentira (Random Forest Radiacion. vs Bicis Rentadas)')
-plt.xlabel('Solar Rad.')
+ax3.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
+ax3.plot(temps, arr_predicts3, color = 'blue')
+plt.title('Verdad o mentira (Random Forest Temp. vs Bicis Rentadas)')
+plt.xlabel('Temp.(°C)')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig3)
 
@@ -223,7 +223,7 @@ for j in temps:
 fig4,ax4 = plt.subplots()
 ax4.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
 ax4.plot(temps, arr_predicts4, color = 'blue')
-plt.title('Verdad o mentira (Decision Tree Vel. viento vs Bicis Rentadas)')
+plt.title('Verdad o mentira (Decision Tree Temp. vs Bicis Rentadas)')
 plt.xlabel('Temp.(°C)')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig4)
