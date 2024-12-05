@@ -100,8 +100,8 @@ updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
 arr_predicts = []
-#temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
-temps = np.array([0,0.5,1,1.5,2,2.5,3,3.5,4])
+temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
+#temps = np.array([0,0.5,1,1.5,2,2.5,3,3.5,4])
 for i in temps:
   res_for = regressor.predict([[hour, i, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
   arr_predicts.append(res_for)
@@ -164,13 +164,13 @@ st.success(int(resSVR))
 #Mostrar grafica
 arr_predicts2 = []
 for j in temps:
-  res_for = svr_reg.predict(sc.transform([[hour, temp, hum, windspeed, visibility, dew_point, j, rain, snow, season, holiday, diafun]]))
+  res_for = svr_reg.predict(sc.transform([[hour, j, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]]))
   arr_predicts2.append(res_for)
 fig2,ax2 = plt.subplots()
-ax2.scatter(x_raw['Solar Radiation (MJ/m2)'], y_raw, color = 'red')
+ax2.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
 ax2.plot(temps, arr_predicts2, color = 'blue')
-plt.title('Verdad o mentira (Regresion SVR Radiacion solar. vs Bicis Rentadas)')
-plt.xlabel('Radiacion Solar')
+plt.title('Verdad o mentira (Regresion SVR Temp. vs Bicis Rentadas)')
+plt.xlabel('Temp.(°C)')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig2)
 
