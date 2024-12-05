@@ -100,8 +100,8 @@ updated_res = result.flatten().astype(float)
 st.success(int(updated_res))
 #Mostrar grafica
 arr_predicts = []
-temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
-#temps = np.array([0,0.5,1,1.5,2,2.5,3,3.5,4,5,6])
+#temps = np.array([-20,-15,-10,-5,0,5,10,15,20,25,30,35,40])
+temps = np.array([0,10,20,30,40,50,60,70,80,90,100])
 for i in temps:
   res_for = regressor.predict([[hour, i, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
   arr_predicts.append(res_for)
@@ -191,13 +191,13 @@ st.success(int(resRFR))
 #Mostrar grafica
 arr_predicts3 = []
 for j in temps:
-  res_for = RFReg.predict([[hour, j, hum, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
+  res_for = RFReg.predict([[hour, temp, j, windspeed, visibility, dew_point, solar_rad, rain, snow, season, holiday, diafun]])
   arr_predicts3.append(res_for)
 fig3,ax3 = plt.subplots()
-ax3.scatter(x_raw['Temperature(°C)'], y_raw, color = 'red')
-ax3.plot(temps, arr_predicts3, color = 'blue')
-plt.title('Verdad o mentira (Random Forest Temp. vs Bicis Rentadas)')
-plt.xlabel('Temp.(°C)')
+ax3.scatter(x_raw['Humidity(%)'], y_raw, color = 'blue')
+ax3.plot(temps, arr_predicts3, color = 'red')
+plt.title('Verdad o mentira (Random Forest Hum. vs Bicis Rentadas)')
+plt.xlabel('Humidity(%)')
 plt.ylabel('Bicis Rentadas')
 st.pyplot(fig3)
 
