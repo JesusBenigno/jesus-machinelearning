@@ -145,7 +145,7 @@ plt.ylabel('Bicis Rentadas')
 st.pyplot(fig1)
 
 st.subheader('Support Vector Regression')
-kernel_svr = st.selectbox('Selecciona el kernel: (optimo=rbf)', ('rbf','linear','sigmoid'))
+kernel_svr = st.selectbox('Selecciona el kernel: (optimo=rbf)', ('rbf', 'poly', 'linear','sigmoid'))
 c_svr = st.slider('Selecciona el parametro de regularizacion C (optimo=9)', 1, 10, 9)
 sc = StandardScaler()
 X_train_escaled = sc.fit_transform(X_train)
